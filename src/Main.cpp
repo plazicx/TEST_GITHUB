@@ -65,8 +65,10 @@ public:
 int main(){
 	CaffeineBeverage* coffe = new Coffee();
 	
+	
 	coffe->prepareRecipe();
 	
 	std::cout << "Hello world - Git!" << std::endl;
+	std::cin.get();
 	
 }
