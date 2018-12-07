@@ -23,8 +23,16 @@ public:
 		std::cout << "Pour in cup! " << std::endl;
 	}
 	// hook - subclass can override this method but does not have to
-	virtual bool customerWantsCondiments(){
-		return true;
+	//virtual bool customerWantsCondiments(){
+	//	return true;
+	//}
+	bool customerWantsCondiments() {
+		std::cout << "add condiments 0/1 -> " << std::endl;
+		std::string answer="";
+		std::getline(std::cin, answer);
+		if (answer=="1") {return true;}
+		else {return false;}
+		
 	}
 };
 
@@ -50,19 +58,12 @@ public:
 		std::cout << "Adding Sugar and Milk" << std::endl;
 	}
 	
-	bool customerWantsCondiments() override {
-		std::cout << "add condiments 0/1 -> " << std::endl;
-		std::string answer="";
-		std::getline(std::cin, answer);
-		if (answer=="1") {return true;}
-		else {return false;}
-		
-	}
+	
 };
 
 
 int main(){
-	Coffee* coffe = new Coffee();
+	CaffeineBeverage* coffe = new Coffee();
 	
 	coffe->prepareRecipe();
 	
